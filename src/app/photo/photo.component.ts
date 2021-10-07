@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, Input } from "@angular/core";
 
 
 @Component({
@@ -6,9 +6,10 @@ import { Component } from "@angular/core";
     templateUrl: './photo.component.html'
 })
 export class PhotoComponent{
-    title = 'alurapic';
-    description = "Leao"
-    url1 = "https://www.collinsdictionary.com/images/thumb/lion_165448187_250.jpg?version=4.0.185"
+    
+    @Input() description = "Leao"
+    @Input() url = ""
+    
     // url2 = "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Lion_waiting_in_Namibia.jpg/280px-Lion_waiting_in_Namibia.jpg"
     // flag:  boolean = false;
     // urlFinal = this.determinaUrl();
