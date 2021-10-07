@@ -1,5 +1,6 @@
 <ap-photo
-    url = "https://www.collinsdictionary.com/images/thumb/lion_165448187_250.jpg?version=4.0.185"
-    description="Leao"
+    *ngFor="let photo of photos"
+    [url] = "photo.url"
+    [description]="photo.description"
 >
 </ap-photo>
