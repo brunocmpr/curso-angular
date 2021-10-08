@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges, } from '@angular/core';
 import { Photo } from '../../photo/photo';
 
 @Component({
@@ -6,7 +6,7 @@ import { Photo } from '../../photo/photo';
   templateUrl: './photos.component.html',
   styleUrls: ['./photos.component.css']
 })
-export class PhotosComponent implements OnInit {
+export class PhotosComponent implements OnChanges {
 
   //Não será utilizado o diretamente array "photos" como modelo para renderização
   //pois há fotos demais e ele estoura o limite de 12 colunas do bootstrap.
@@ -16,9 +16,15 @@ export class PhotosComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
-    this.rows = this.groupColumns(this.photos);
+
+  ngOnChanges(changes: SimpleChanges): void { //SimpleChanges contem todas as mudanças que chegam às inbound properties,
+                                              //mesmo após a instanciacao deste objeto
+                                              //Se entendi bem, também deve executar logo de inicio como ngOnInit
+    if(changes.photos){
+      this.rows = this.groupColumns(this.photos);
+    }
   }
+  
   groupColumns(photos: Photo[]): any[] {
     const newRows:any = [];
 
