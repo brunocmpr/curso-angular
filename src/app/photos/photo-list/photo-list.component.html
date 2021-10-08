@@ -1,1 +1,16 @@
-<ap-photos [photos]="photos"></ap-photos>
+<div class="text-center mt-3 mb-3">
+    <form>
+        <input
+            class="rounded"
+            type="search"
+            placeholder="search..."
+            autofocus
+            (keyup)=" filter = $any($event.target).value"
+        >
+        <!-- Tive que xunxar com esse $any por erro de compilacao https://stackoverflow.com/questions/67123603/angular-error-ts2531-object-is-possibly-null -->
+        <!-- Usamos $event (ao inves de 'event' do JS nativo) pq eh um objeto especial do angular -->
+        <!-- Note que eu poderia ter usado um two way data binding (meio overkill) com ([ngModel]) -->
+    </form>
+</div>
+
+<ap-photos [photos]="photos | filterByDescription: filter"></ap-photos>

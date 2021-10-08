@@ -11,6 +11,7 @@ import { PhotoService } from '../photo/photo.service';
 export class PhotoListComponent implements OnInit {
 
   photos:Photo[] = [];
+  filter: string = ''!;
   constructor(
     private service: PhotoService,
     private activatedRoute: ActivatedRoute
@@ -23,5 +24,5 @@ export class PhotoListComponent implements OnInit {
       photos => this.photos = photos
     );
   }
-
+  
 }
