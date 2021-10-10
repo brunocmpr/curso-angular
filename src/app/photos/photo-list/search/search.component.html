@@ -7,6 +7,7 @@
             placeholder="search..."
             autofocus
             (keyup)="debounce.next($any($event.target).value)"
+            [value]='value'
         >
         <!-- Tive que xunxar com esse $any por erro de compilacao https://stackoverflow.com/questions/67123603/angular-error-ts2531-object-is-possibly-null -->
         <!-- Usamos $event (ao inves de 'event' do JS nativo) pq eh um objeto especial do angular -->

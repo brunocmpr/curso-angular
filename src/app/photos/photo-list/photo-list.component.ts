@@ -35,6 +35,7 @@ export class PhotoListComponent implements OnInit {
   load(){
     this.service.listFromUserPaginated(this.userName, ++this.currentPage)
       .subscribe(photos => {
+        this.filter = '';
         this.photos = this.photos.concat(photos); //IMPORTANTE SOBRE ANGULAR: nao pode ser o push, pq temos que associar a referencia de um novo objeto pro data binding sacar que precisa atualizar as coisas
         if(!photos.length)
           this.hasMore = false;
