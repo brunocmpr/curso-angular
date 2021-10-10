@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { CardModule } from 'src/app/shared/components/card/card.module';
+import { DarkenOnHoverModule } from 'src/app/shared/directives/darken-on-hover/darken-on-hover.module';
 import { PhotoModule } from '../photo/photo.module';
 import { LoadButtonComponent } from '../photos-list/load-button/load-button.component';
 import { FilterByDescription } from './filter-by-description.pipe';
@@ -24,6 +25,7 @@ import { SearchComponent } from './search/search.component';
                         //esse submodulo de BrowserModule, o CommonModule. Então a boa prática é SEMPRE importar este módulo.
         PhotoModule,
         CardModule,
+        DarkenOnHoverModule,
     ]
 })
 export class PhotoListModule{
