@@ -6,6 +6,7 @@ import { LoadButtonComponent } from '../photos-list/load-button/load-button.comp
 import { FilterByDescription } from './filter-by-description.pipe';
 import { PhotoListComponent } from './photo-list.component';
 import { PhotosComponent } from './photos/photos.component';
+import { SearchComponent } from './search/search.component';
 
 @NgModule({
     declarations: [
@@ -13,6 +14,7 @@ import { PhotosComponent } from './photos/photos.component';
         PhotosComponent,
         LoadButtonComponent,
         FilterByDescription,
+        SearchComponent,
     ],
     imports: [
         CommonModule,   //SEMPRE IMPORTAR COMMONMODULE em qualquer modulo que criar, pelo menos os que tiverem componentes filhos diretos.
@@ -21,7 +23,7 @@ import { PhotosComponent } from './photos/photos.component';
                         //importado 1x na aplicacao, e pelo visto é sempre em AppModule. Entao aqui só podemos importar
                         //esse submodulo de BrowserModule, o CommonModule. Então a boa prática é SEMPRE importar este módulo.
         PhotoModule,
-        CardModule
+        CardModule,
     ]
 })
 export class PhotoListModule{
