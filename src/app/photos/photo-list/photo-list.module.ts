@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { CardModule } from 'src/app/shared/components/card/card.module';
 import { PhotoModule } from '../photo/photo.module';
 import { LoadButtonComponent } from '../photos-list/load-button/load-button.component';
 import { FilterByDescription } from './filter-by-description.pipe';
@@ -20,6 +21,7 @@ import { PhotosComponent } from './photos/photos.component';
                         //importado 1x na aplicacao, e pelo visto é sempre em AppModule. Entao aqui só podemos importar
                         //esse submodulo de BrowserModule, o CommonModule. Então a boa prática é SEMPRE importar este módulo.
         PhotoModule,
+        CardModule
     ]
 })
 export class PhotoListModule{
